@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-App</title>
+    <link rel="stylesheet" href="./style.css" />
+
+     <!-- Link Favicon  -->
+     <link rel="shortcut icon" href="./Images/snowflake_weather_app_icon.png" type="image/x-icon" />
+
+    <!-- Link Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <video autoplay loop muted plays-inline class="background-video">
+        <source src="./Images/video_2023-09-13_10-32-27.mp4" type="video/mp4" />
+      </video>
+
+      <div class="wrapper">
+        <h1>Weather App</h1>
+        <div class="tab-cointainer">
+          <p class="tab" data-userWeather>Your Weather</p>
+          <p class="tab" data-searchweather>Search Weather</p>
+        </div>
+  
+        <div class="weather-container">
+          <!-- Grant-Location_Container  -->
+          <div class=" sub-container grant-location-container">
+            <img
+              src="./Images/location.png"
+              alt="location-image"
+              width="80px"
+              height="80"
+              loading="lazy"
+            />
+            <p>Grant Location Access</p>
+            <p>Allow Access To Get Weather Information</p>
+            <button class="btn" data-grantAccess>GRANT ACCESS</button>
+          </div>
+  
+          <!-- Search Form -->
+          <form class="form-container" data-searchForm >
+            <input placeholder="Search for City..." data-searchInput />
+            <button class="btn">
+              <img
+                src="./Images/search.png"
+                alt="Search-image"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+            </button>
+          </form>
+  
+          <!-- loading-Screen-Container -->
+          <div class=" sub-container loading-container">
+            <img
+              src="./Images/loading.gif"
+              alt="loading-Animation"
+              width="150"
+              height="150"
+              loading="lazy"
+            />
+            <p>Loading</p>
+          </div>
+  
+          <!-- Show-weather-Info -->
+          <div class=" sub-container user-info-container">
+            <!-- City Name and Flag -->
+            <div class="name">
+              <p data-cityName></p>
+              <img data-countryIcon alt="flag-image" />
+            </div>
+  
+            <!-- weather-Description -->
+            <p data-weatherDesc></p>
+  
+            <!-- weather-Icon -->
+            <img data-weathericon />
+  
+            <!-- temperature -->
+            <p data-temp></p>
+  
+            <!-- #-Cards-parameters -->
+            <div class="parameter-container">
+              <!-- Card-1 -->
+              <div class="parameter">
+                <img src="./Images/wind.png" alt="wind-image" loading="lazy" />
+                <p>windspeed</p>
+                <p data-windspeed></p>
+              </div>
+  
+              <!-- Card-2 -->
+              <div class="parameter">
+                <img
+                  src="./Images/humidity.png"
+                  alt="humidity-img"
+                  loading="lazy"
+                />
+                <p>Humidity</p>
+                <p data-humidity></p>
+              </div>
+              <!-- Card-3 -->
+              <div class="parameter">
+                <img src="./Images/cloud.png" alt="cloud-img" loading="lazy" />
+                <p>Cloads</p>
+                <p data-cloadiness></p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Location Not Found -->
+          <div class="errorContainer sub-container">
+            <img src="./Images/not-found.png" data-errorImg />
+            <p data-errorText></p>
+            <button class="btn" data-errorButton>Retry Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
